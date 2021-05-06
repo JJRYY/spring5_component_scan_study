@@ -1,7 +1,13 @@
 package spring5_component_scan_study.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("infoPrinter")
 public class MemberInfoPrinter {
+	@Autowired
 	private MemberDao memDao;
+	@Autowired
 	private MemberPrinter printer;
 
 	public void MemberInfoPrinter(String email) {

@@ -68,7 +68,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
-		MemberInfoPrinter infoPrinter = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
+		MemberInfoPrinter infoPrinter = ctx.getBean(MemberInfoPrinter.class);
 		infoPrinter.MemberInfoPrinter(arg[1]);
 		
 	}
@@ -77,7 +77,7 @@ public class MainForSpring {
 //		MemberSelectAllService selSvc = ctx.getBean("selectAllSvc", MemberSelectAllService.class);
 //		selSvc.selectAll();
 		
-		MemberListPrinter listPrinter = ctx.getBean("listPrinter", MemberListPrinter.class);
+		MemberListPrinter listPrinter = ctx.getBean(MemberListPrinter.class);
 		listPrinter.printAll();
 	}
 	
@@ -87,7 +87,7 @@ public class MainForSpring {
 			return;
 		}
 		
-		MemberRegisterService regSvc = ctx.getBean("memberRegSvc", MemberRegisterService.class);
+		MemberRegisterService regSvc = ctx.getBean(MemberRegisterService.class);
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
@@ -111,7 +111,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
-		ChangePasswordService changePwdSvc = ctx.getBean("changePwdSvc", ChangePasswordService.class);
+		ChangePasswordService changePwdSvc = ctx.getBean(ChangePasswordService.class);
 		try {
 			changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
 			System.out.println("암호를 변경했습니다.\n");
